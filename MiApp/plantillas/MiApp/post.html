@@ -1,0 +1,13 @@
+{% extends 'MiApp/index.html' %}
+{% block content %}
+<form action="" method="POST">
+	{% csrf_token %}
+	{{ formulario.titulo }}
+	<br><br>
+	{{ formulario.Imagen }}
+	<br><br>
+	{{ formulario.sonido }}
+	<br><br>
+	<button>Cargar</button>
+</form>
+{% endblock %}

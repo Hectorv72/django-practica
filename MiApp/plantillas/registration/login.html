@@ -1,0 +1,20 @@
+{% entends "MiApp/index.html" %}
+{% block title %}INGRESAR{% endblock %}
+
+{% block content %}
+	{% if form.errors %}
+		<p>Su usuario o clave no coinciden</p>
+	{% endif %}
+	<br>
+	<form action="{% url 'login' %}" method="post">
+		{% csrf_token %}
+			<p>Usuario: </p>
+			{{ form.username }}
+			<br>
+			<p>Contrasenia: </p>
+			{{ form.password }}
+			<br><br>
+			<button>Ingresar</button>
+			<input type="hidden" name="next" value="{{ next }}">
+	</form>
+{% endblock %}

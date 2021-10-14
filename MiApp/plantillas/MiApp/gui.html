@@ -1,0 +1,17 @@
+{% extend 'MiApp/index.html' %}
+{% load static %}
+{% block content %}
+<div class="contenedor">
+	<div id="contrado">
+		{% for img in base %}
+		<h2>{{ img.titulo }}</h2>
+		<audio id="myAudio">
+		<source src="{{ img.sonido.url }}" type="audio/mp3">
+			tu navegador no soporta audio
+		</audio>
+		<script src="{% static 'js/play.js' %}"></script>
+		<p><button onclick="playAudio()" type="button"><img src="{{ img.imagen.url }}" alt=""></button></p>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

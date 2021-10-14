@@ -1,0 +1,16 @@
+{% extends 'MiApp/index.html' %}
+
+{% block content %}
+
+{% if dato %}
+	<p>Ingresaste {{ dato }}</p>
+{% else %}
+	<p>Ingrese Texto...</p>
+{% endif %}
+
+<form action="", method="GET">
+	<input type="text" name="q">
+	<button>Ingresar</button>
+</form>
+
+{% endblock %}
